@@ -19,20 +19,20 @@ void loop() {
     int sensorValue = analogRead(ldr);
 
     if (sensorValue < 300) {
-        digitalWrite(ledVerde, HIGH);
-        digitalWrite(ledAmarelo, LOW);
-        digitalWrite(ledVermelho, LOW);
+        ledControl(HIGH, LOW, LOW);
     }
     else if (sensorValue > 900) {
-        digitalWrite(ledVermelho, HIGH);
-        digitalWrite(ledVerde, LOW);
-        digitalWrite(ledAmarelo, LOW);
+        ledControl(LOW, LOW HIGH);
         tone(buzzer, 900, tempo);
         delay(3000);
     }
     else {
-        digitalWrite(ledAmarelo, HIGH);
-        digitalWrite(ledVerde, LOW);
-        digitalWrite(ledVermelho, LOW);
+        ledControl(LOW, HIGH, LOW);
     }
+}
+
+void ledControl(int value1, int value2, int value3) {
+	digitalWrite(ledVerde, value1);
+  	digitalWrite(ledAmarelo, value2);
+  	digitalWrite(ledVermelho, value3);
 }
