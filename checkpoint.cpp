@@ -3,7 +3,7 @@ int ledAmarelo = 4;
 int ledVermelho = 5;
 int buzzer = 6;
 int ldr = A1;
-int tempo = 500;
+int tempo = 2000;
 
 void setup() {
     pinMode(ledVerde, OUTPUT);
@@ -28,7 +28,7 @@ void loop() {
         digitalWrite(ledVerde, LOW);
         digitalWrite(ledAmarelo, LOW);
         tone(buzzer, 900, tempo);
-        delay(500);
+        delay(3000);
     }
     else {
         digitalWrite(ledAmarelo, HIGH);
