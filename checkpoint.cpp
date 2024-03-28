@@ -22,7 +22,7 @@ void loop() {
         ledControl(HIGH, LOW, LOW);
     }
     else if (sensorValue > 900) {
-        ledControl(LOW, LOW HIGH);
+        ledControl(LOW, LOW, HIGH);
         tone(buzzer, 900, tempo);
         delay(3000);
     }
